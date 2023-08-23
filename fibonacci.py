@@ -1,7 +1,15 @@
-a, b = 0, 1
-print("First 10 numbers of the Fibonacci sequence: ")
+def fibonacci(n):
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
 
-for _ in range (10):
-    print (a)
-
-    a, b = b, a + b
+try:
+    count = int(input("How many Fibonacci numbers would you like to see? "))
+    print(f"The first {count} numbers of the Fibonacci sequence are:")
+    print(fibonacci(count))
+except ValueError:
+    print("Please enter a valid number.")
+    
